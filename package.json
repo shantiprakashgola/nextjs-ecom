@@ -5,14 +5,15 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "prettier --check .",
+    "format": "prettier --write ."
   },
   "husky": {
     "hooks": {
       "applypatch-msg": "echo \"[Husky] applypatch-msg\"",
       "pre-applypatch": "echo \"[Husky] pre-applypatch\"",
       "post-applypatch": "echo \"[Husky] post-applypatch\"",
-      "pre-commit": "echo \"[Husky] pre-commit\"",
+      "pre-commit": "echo \"[Husky] pre-commit\" && prettier --write . && git add -A .",
       "pre-merge-commit": "echo \"[Husky] pre-merge-commit\"",
       "prepare-commit-msg": "echo \"[Husky] prepare-commit-msg\"",
       "commit-msg": "echo \"[Husky] commit-msg\"",
@@ -46,6 +47,7 @@
   "devDependencies": {
     "eslint": "8.4.1",
     "eslint-config-next": "12.0.7",
-    "husky": "^4.2.3"
+    "husky": "^4.2.3",
+    "prettier": "^2.5.1"
   }
 }
