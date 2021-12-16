@@ -13,7 +13,7 @@
       "applypatch-msg": "echo \"[Husky] applypatch-msg\"",
       "pre-applypatch": "echo \"[Husky] pre-applypatch\"",
       "post-applypatch": "echo \"[Husky] post-applypatch\"",
-      "pre-commit": "echo \"[Husky] pre-commit\" && prettier --write . && git add -A .",
+      "pre-commit": "lint-staged",
       "pre-merge-commit": "echo \"[Husky] pre-merge-commit\"",
       "prepare-commit-msg": "echo \"[Husky] prepare-commit-msg\"",
       "commit-msg": "echo \"[Husky] commit-msg\"",
@@ -38,6 +38,9 @@
       "p4-pre-submit": "echo \"[Husky] p4-pre-submit\"",
       "post-index-change": "echo \"[Husky] post-index-change\""
     }
+  },
+  "lint-staged": {
+    "*": "prettier --write"
   },
   "dependencies": {
     "next": "12.0.7",
